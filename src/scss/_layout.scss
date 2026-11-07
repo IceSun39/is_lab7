@@ -1,0 +1,163 @@
+@use 'variables' as *;
+
+// ---- Шапка ----
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: $header-height;
+  }
+
+  &__actions { display: flex; align-items: center; gap: 12px; }
+
+  @include md {
+    &__login { display: none; }
+  }
+  @include sm {
+    &__signup { display: none; }
+    &__inner { height: 64px; }
+    .logo__text { font-size: 18px; }
+    .logo__mark { width: 36px; height: 36px; font-size: 20px; }
+  }
+}
+
+.nav {
+  &__list { display: flex; gap: 32px; }
+  &__link { font-weight: 500; &:hover { color: var(--accent); } }
+
+  @include md {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 16px 24px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+
+    &.is-open { display: block; }
+    &__list { flex-direction: column; gap: 16px; }
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  background: var(--bg-2);
+  cursor: pointer;
+
+  span { width: 20px; height: 3px; border-radius: 2px; background: var(--text); }
+
+  @include md { display: flex; }
+}
+
+// ---- Hero ----
+.hero {
+  padding-block: 48px 32px;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+
+    @include md { grid-template-columns: 1fr; }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    padding: 40px;
+    background: var(--bg-2);
+    border-radius: 24px;
+
+    @include sm { padding: 24px; }
+  }
+
+  &__title { font-size: clamp(30px, 4vw, 48px); line-height: 1.2; }
+  &__subtitle { font-size: 18px; color: var(--muted); }
+  &__buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+
+  &__image {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 320px;
+    border-radius: 24px;
+
+    @media (min-width: #{$bp-md + 1}) { min-height: $hero-height; }
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+
+  &__play {
+    display: grid;
+    place-items: center;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 20%);
+    color: #fff;
+    font-size: 44px;
+    padding-left: 8px;
+  }
+}
+
+// ---- Секції ----
+.section {
+  padding-block: 48px;
+
+  &__title { font-size: clamp(26px, 3vw, 34px); text-align: center; }
+  &__subtitle { margin-top: 8px; text-align: center; color: var(--muted); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 40px;
+
+    @include md { grid-template-columns: 1fr; }
+  }
+}
+
+.panel {
+  padding: 48px 32px;
+  background: var(--bg-2);
+  border-radius: 24px;
+}
+
+// ---- Футер ----
+.footer {
+  margin-top: 48px;
+  min-height: $footer-height;
+  padding-block: 40px;
+  background: var(--bg-2);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    @include md { flex-direction: column; }
+  }
+
+  &__brand { display: flex; flex-direction: column; gap: 16px; max-width: 480px; }
+  &__note { font-size: 14px; color: var(--muted); }
+  &__links { display: flex; gap: 24px; align-self: flex-start; font-weight: 500; flex-wrap: wrap; }
+}

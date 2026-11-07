@@ -1,0 +1,14 @@
+include mixins
+include data
+include header
++page('Кабінет викладача')
+  .panel
+    h2 Створити вебінарну кімнату
+    form#room
+      +select('room-course','Курс')
+      +field('room-title','Тема заняття')
+      +field('room-date','Дата й час','datetime-local')
+      button.btn.btn--primary(type='submit') Створити кімнату
+  h2 Заплановані заняття
+  ul#rooms.list
+include footer

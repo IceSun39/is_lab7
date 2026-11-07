@@ -1,0 +1,270 @@
+{
+ "courses": [
+  {
+   "id": "py",
+   "title": "Python для початківців",
+   "category": "Програмування",
+   "price": 1900,
+   "teacher": "О. Мельник",
+   "description": "Базовий курс програмування для початківців.",
+   "duration": "8 тижнів",
+   "status": "published",
+   "modules": [
+    {
+     "id": "pym0",
+     "title": "Основи мови",
+     "topics": [
+      {
+       "id": "pym0t0",
+       "title": "Змінні та типи"
+      },
+      {
+       "id": "pym0t1",
+       "title": "Умови й цикли"
+      }
+     ]
+    },
+    {
+     "id": "pym1",
+     "title": "Функції та модулі",
+     "topics": [
+      {
+       "id": "pym1t0",
+       "title": "Функції"
+      },
+      {
+       "id": "pym1t1",
+       "title": "Робота з файлами"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "web",
+   "title": "Frontend: Vite, Pug, Sass",
+   "category": "Програмування",
+   "price": 2400,
+   "teacher": "І. Шевчук",
+   "description": "Сучасна верстка та збірка фронтенду.",
+   "duration": "6 тижнів",
+   "status": "published",
+   "modules": [
+    {
+     "id": "webm0",
+     "title": "Інструменти",
+     "topics": [
+      {
+       "id": "webm0t0",
+       "title": "Vite"
+      },
+      {
+       "id": "webm0t1",
+       "title": "Pug"
+      }
+     ]
+    },
+    {
+     "id": "webm1",
+     "title": "Стилі",
+     "topics": [
+      {
+       "id": "webm1t0",
+       "title": "Sass"
+      },
+      {
+       "id": "webm1t1",
+       "title": "Адаптивна верстка"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ux",
+   "title": "UX/UI дизайн у Figma",
+   "category": "Дизайн",
+   "price": 2100,
+   "teacher": "К. Бондар",
+   "description": "Від дослідження до інтерактивного прототипу.",
+   "duration": "6 тижнів",
+   "status": "published",
+   "modules": [
+    {
+     "id": "uxm0",
+     "title": "Дослідження",
+     "topics": [
+      {
+       "id": "uxm0t0",
+       "title": "Інтерв'ю з користувачами"
+      },
+      {
+       "id": "uxm0t1",
+       "title": "Персони"
+      }
+     ]
+    },
+    {
+     "id": "uxm1",
+     "title": "Прототипування",
+     "topics": [
+      {
+       "id": "uxm1t0",
+       "title": "Wireframes"
+      },
+      {
+       "id": "uxm1t1",
+       "title": "Figma"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pm",
+   "title": "Управління IT-проєктами",
+   "category": "Менеджмент",
+   "price": 2700,
+   "teacher": "Д. Лисенко",
+   "description": "Основи управління IT-проєктами.",
+   "duration": "4 тижні",
+   "status": "published",
+   "modules": [
+    {
+     "id": "pmm0",
+     "title": "Планування",
+     "topics": [
+      {
+       "id": "pmm0t0",
+       "title": "Цілі та вимоги"
+      },
+      {
+       "id": "pmm0t1",
+       "title": "Оцінка термінів"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Яка мова додається до JavaScript типами?",
+   "options": [
+    "TypeScript",
+    "Pug",
+    "Sass"
+   ],
+   "answer": 0
+  },
+  {
+   "q": "Що компілюється у CSS?",
+   "options": [
+    "Pug",
+    "Sass",
+    "JSON"
+   ],
+   "answer": 1
+  },
+  {
+   "q": "Інструмент збірки фронтенду:",
+   "options": [
+    "Vite",
+    "Figma",
+    "Excel"
+   ],
+   "answer": 0
+  },
+  {
+   "q": "Що описує шаблони HTML у нашому проєкті?",
+   "options": [
+    "Pug",
+    "SQL",
+    "Python"
+   ],
+   "answer": 0
+  }
+ ],
+ "formats": [
+  {
+   "id": "self",
+   "name": "Самостійне навчання",
+   "k": 1
+  },
+  {
+   "id": "group",
+   "name": "Група з викладачем",
+   "k": 1.5
+  },
+  {
+   "id": "mentor",
+   "name": "Індивідуально з ментором",
+   "k": 2.2
+  }
+ ],
+ "extras": [
+  {
+   "id": "rec",
+   "name": "Доступ до записів занять",
+   "price": 300
+  },
+  {
+   "id": "pract",
+   "name": "Перевірка практичних робіт",
+   "price": 500
+  },
+  {
+   "id": "cert",
+   "name": "Друкований сертифікат",
+   "price": 250
+  }
+ ],
+ "promos": {
+  "EDU10": 10,
+  "STUDENT20": 20
+ },
+ "reviews": [
+  {
+   "teacher": "О. Мельник",
+   "rating": 5,
+   "text": "Дуже зрозумілі пояснення"
+  },
+  {
+   "teacher": "О. Мельник",
+   "rating": 4,
+   "text": "Багато практики"
+  },
+  {
+   "teacher": "І. Шевчук",
+   "rating": 4,
+   "text": "Корисні приклади"
+  },
+  {
+   "teacher": "К. Бондар",
+   "rating": 3,
+   "text": "Хотілося б більше зворотного звʼязку"
+  }
+ ],
+ "teacherStats": [
+  {
+   "teacher": "О. Мельник",
+   "completion": 80,
+   "plan": 100
+  },
+  {
+   "teacher": "І. Шевчук",
+   "completion": 70,
+   "plan": 90
+  },
+  {
+   "teacher": "К. Бондар",
+   "completion": 65,
+   "plan": 100
+  },
+  {
+   "teacher": "Д. Лисенко",
+   "completion": 90,
+   "plan": 80
+  }
+ ]
+}

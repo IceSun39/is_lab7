@@ -1,0 +1,36 @@
+include mixins
+include data
+include header
++page('Панель менеджера')
+  .two
+    .panel
+      h2 Курс
+      form#course-form(novalidate)
+        input#c-id(type='hidden')
+        +field('c-title','Назва (3–100 символів)','text',true)
+        +area('c-desc','Опис')
+        +field('c-cat','ІТ-напрям','text',true)
+        +field('c-dur','Тривалість (наприклад, 6 тижнів)','text',true)
+        +field('c-price','Ціна, грн','number',true)
+        +select('c-status','Статус')
+          option(value='draft') Чернетка
+          option(value='published') Опубліковано
+        p#course-err.alert(hidden)
+        button.btn.btn--primary(type='submit') Зберегти курс
+    .panel
+      h2 Реєстрація викладача
+      form#new-teacher
+        +field('t-name','Імʼя')
+        +field('t-email','Email','email')
+        +select('t-course','Призначити на курс')
+        button.btn.btn--primary(type='submit') Зареєструвати
+      h2 Викладачі
+      ul#teachers.list
+  h2 Каталог курсів
+  ul#courses-list.list
+  h2 Ефективність викладачів (KPI)
+  p#kpi-month.hint
+  ul#kpi-list.list
+  h2 Анонімні відгуки студентів
+  ul#reviews.list
+include footer

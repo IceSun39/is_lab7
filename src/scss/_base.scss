@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+:root {
+  @include theme($light);
+  color-scheme: light;
+}
+
+// Системна темна тема, якщо користувач не обирав вручну
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include theme($dark);
+    color-scheme: dark;
+  }
+}
+
+// Ручний вибір теми
+:root[data-theme='dark'] {
+  @include theme($dark);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, p { margin: 0; }
+
+.container {
+  width: 100%;
+  max-width: $page-width;
+  margin-inline: auto;
+  padding-inline: $page-padding;
+
+  @include md { padding-inline: 24px; }
+}

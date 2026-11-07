@@ -1,0 +1,21 @@
+include mixins
+include data
+include header
++page('Вхід та реєстрація')
+  .panel.auth
+    .tabs
+      button.btn.btn--secondary.js-tab(data-tab='login') Вхід
+      button.btn.btn--secondary.js-tab(data-tab='reg') Реєстрація
+    form#login(data-tab='login')
+      +field('l-email','Email','email')
+      +field('l-pass','Пароль','password')
+      button.btn.btn--primary(type='submit') Увійти
+    form#reg(data-tab='reg' hidden)
+      +field('r-name','Імʼя')
+      +field('r-email','Email','email')
+      +field('r-pass','Пароль (від 6 символів)','password')
+      button.btn.btn--primary(type='submit') Зареєструватись
+    p#msg.alert(hidden)
+    button#confirm.btn.btn--secondary(hidden) Підтвердити email (імітація листа)
+    p.hint Демо-входи: teacher@edu.ua, manager@edu.ua
+include footer

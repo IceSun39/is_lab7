@@ -1,0 +1,19 @@
+header.header
+  .container.header__inner
+    a.logo(href="#" aria-label=siteName)
+      span.logo__mark E
+      span.logo__text= siteName
+
+    nav.nav.js-nav(aria-label="Головна навігація")
+      ul.nav__list
+        each item in navItems
+          +navLink(item)
+
+    .header__actions
+      button.btn.btn--ghost.btn--icon.js-theme-toggle(type="button" aria-label="Змінити тему оформлення") ◐
+      a.btn.btn--secondary.header__login.js-auth(href="login.html") Увійти
+      a.btn.btn--primary.header__signup(href="login.html#reg") Реєстрація
+      button.burger.js-burger(type="button" aria-label="Відкрити меню" aria-expanded="false")
+        span
+        span
+        span

@@ -1,0 +1,10 @@
+include mixins
+include data
+include header
++page('Каталог курсів')
+  .toolbar
+    input#search(type='search' placeholder='Пошук курсу…')
+    select#category
+      option(value='') Усі категорії
+  #courses.grid
+include footer

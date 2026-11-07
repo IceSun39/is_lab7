@@ -1,0 +1,46 @@
+//- Іконка-заглушка (символ у кольоровому квадраті)
+mixin icon(symbol, variant)
+  span.icon(class=variant ? `icon--${variant}` : false, aria-hidden="true")= symbol
+
+//- Картка переваги
+mixin benefit(item)
+  article.card
+    +icon(item.icon, item.variant)
+    h3.card__title= item.title
+    p.card__text= item.text
+
+//- Блок статистики
+mixin stat(item)
+  li.stat
+    span.stat__value= item.value
+    span.stat__label= item.label
+
+//- Посилання навігації
+mixin navLink(item)
+  li
+    a.nav__link(href=item.href)= item.label
+
+//- Поле форми
+mixin field(id, label, type, optional, value)
+  label.field(for=id)
+    span= label
+    input(id=id, type=type || 'text', required=!optional, value=value)
+
+//- Багаторядкове поле
+mixin area(id, label)
+  label.field(for=id)
+    span= label
+    textarea(id=id, rows='3')
+
+//- Випадний список
+mixin select(id, label)
+  label.field(for=id)
+    span= label
+    select(id=id)
+      block
+
+//- Обгортка сторінки з заголовком
+mixin page(title)
+  main.container.page
+    h1.page__title= title
+    block

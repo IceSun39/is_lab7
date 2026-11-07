@@ -1,0 +1,11 @@
+include mixins
+include data
+include header
++page('Програма курсу')
+  p#cur-title.lead
+  .panel
+    form#add-module
+      +field('mod-title','Назва нового модуля')
+      button.btn.btn--primary(type='submit') Додати модуль
+  ol#modules.modules
+include footer

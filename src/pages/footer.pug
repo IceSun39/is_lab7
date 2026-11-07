@@ -1,0 +1,12 @@
+footer.footer#footer
+  .container.footer__inner
+    .footer__brand
+      a.logo(href="#")
+        span.logo__mark E
+        span.logo__text= siteName
+      p.footer__note.
+        © #{year} #{siteName}. Обробка персональних даних відповідно до
+        Закону України «Про захист персональних даних».
+    ul.footer__links
+      each item in navItems
+        +navLink(item)

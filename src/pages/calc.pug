@@ -1,0 +1,38 @@
+include mixins
+include data
+include header
++page('Калькулятор навчання')
+  .two
+    .panel
+      h2 Вартість навчання
+      form#cost
+        +select('calc-course','Курс')
+        +select('calc-format','Формат навчання')
+        fieldset#extras
+          legend Додатково
+        label.field(for="promo")
+          span Промокод
+          input#promo(placeholder="EDU10 або STUDENT20")
+      ul#breakdown.list
+      p#total.alert
+    .panel
+      h2 Підсумковий бал студента
+      form#score
+        +field('s-tests','Оцінки за проміжні тести, % (через кому)')
+        +field('s-project','Оцінка фінального проєкту, % (порожньо, якщо ще немає)','number',true)
+        +field('s-w-tests','Вага тестів, %','number',false,40)
+        +field('s-w-project','Вага проєкту, %','number',false,60)
+        button.btn.btn--primary(type='submit') Розрахувати
+      p#score-res.alert(hidden)
+  .panel
+    h2 KPI викладача
+    form#kpi
+      +field('k-rating','Середній бал відгуків (1–5), порожньо — немає відгуків','number',true)
+      +field('k-done','Студентів, що завершили курс, %','number')
+      +field('k-plan','Виконання плану занять, %','number')
+      +field('k-w-r','Вага відгуків, %','number',false,40)
+      +field('k-w-c','Вага завершення, %','number',false,40)
+      +field('k-w-p','Вага занять, %','number',false,20)
+      button.btn.btn--primary(type='submit') Розрахувати KPI
+    p#kpi-res.alert(hidden)
+include footer

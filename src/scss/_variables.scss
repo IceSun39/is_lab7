@@ -1,0 +1,55 @@
+// Кольорове рішення (рис. 5 з лабораторної №3)
+$light: (
+  bg:      #F8FAFC,  // основний фон
+  bg-2:    #E2E8F0,  // вторинний фон
+  accent:  #2563EB,  // акцентний
+  accent-2:#4F46E5,  // додатковий акцент
+  text:    #0F172A,  // основний текст
+  muted:   #475569,
+  card:    #FFFFFF,
+  line:    #CBD5E1,
+);
+
+$dark: (
+  bg:      #0F172A,
+  bg-2:    #1E293B,
+  accent:  #3B82F6,
+  accent-2:#6366F1,
+  text:    #F8FAFC,
+  muted:   #94A3B8,
+  card:    #1E293B,
+  line:    #334155,
+);
+
+// Основні параметри застосунку (відповідають макету у Figma)
+$page-width: 1440px;     // ширина сторінки
+$page-padding: 80px;     // бічні відступи (контент = 1280px)
+$header-height: 80px;    // висота шапки
+$hero-height: 430px;     // висота головного блоку
+$footer-height: 170px;   // мінімальна висота підвалу
+$radius: 20px;
+$bp-md: 900px;
+$bp-sm: 600px;
+
+@mixin theme($map) {
+  @each $name, $value in $map {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin md { @media (max-width: $bp-md) { @content; } }
+@mixin sm { @media (max-width: $bp-sm) { @content; } }
+
+// Міксини
+@mixin flex($dir: row, $gap: 16px, $align: stretch) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  gap: $gap;
+}
+@mixin surface($pad: 24px) {
+  padding: $pad;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: $radius;
+}

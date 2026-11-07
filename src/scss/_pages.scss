@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+.page { padding-block: 40px; @include flex(column, 24px); &__title { font-size: 34px; } h2 { font-size: 22px; } }
+.lead { color: var(--muted); font-size: 18px; }
+.hint { color: var(--muted); font-size: 14px; }
+.panel { @include surface(32px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; @include md { grid-template-columns: 1fr; } }
+.tag { align-self: flex-start; padding: 2px 12px; border-radius: 99px; background: var(--bg-2); font-size: 13px; }
+.toolbar { @include flex(row, 12px); flex-wrap: wrap; }
+
+input, select, textarea {
+  padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg); color: var(--text); font: inherit; min-width: 220px;
+}
+form { @include flex(column, 16px); }
+.field { @include flex(column, 6px); font-weight: 500; input, select, textarea { width: 100%; } }
+.auth { max-width: 480px; margin-inline: auto; width: 100%; @include flex(column, 16px); }
+.tabs { @include flex(row, 8px); }
+.alert { padding: 14px 18px; border-radius: 12px; background: var(--bg-2); border-left: 4px solid var(--accent); }
+.list { @include flex(column, 12px); li { @include surface(16px); @include flex(row, 12px, center); justify-content: space-between; flex-wrap: wrap; } }
+fieldset { border: 1px solid var(--line); @include flex(column, 10px); }
+.opt { @include flex(row, 10px, center); input { min-width: 0; } }
+[hidden] { display: none !important; }
+
+textarea { padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--text); font: inherit; width: 100%; }
+.btn--sm { padding: 4px 10px; font-size: 14px; }
+.modules { @include flex(column, 16px); padding: 0; list-style: none; margin: 0; }
+.module { @include surface(20px); }
+.module__head, .topic { @include flex(row, 12px, center); justify-content: space-between; flex-wrap: wrap; }
+.topics { @include flex(column, 8px); margin: 12px 0 0; padding-left: 16px; list-style: none; }
+details { color: var(--muted); summary { cursor: pointer; color: var(--accent); } ol, ul { margin: 8px 0; padding-left: 20px; } }
